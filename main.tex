@@ -1,0 +1,38 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet} %Fikser skrifttype
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+
+\title{Boat lab assignment report}
+\author{Gruppe 33\\ \\Edda Solem - 768666\\Nicholas Fraser Ødegård - 768620\\ Arild Stenset - 768662 }
+\date{October 2017}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\thispagestyle{empty} % Avoid page numbering on the table of contents.
+
+\newpage
+\setcounter{page}{1}
+
+\include{introduction}
+\include{task1}
+\include{task2}
+\include{task3}
+\include{task4}
+\include{task5}
+
+\newpage
+\nocite{*}
+\bibliographystyle{unsrt} %Fikser silen til biblioteket sånn at ingenting går til helvete
+\addcontentsline{toc}{section}{References} %Legger til kildeliste i table of content
+\bibliography{kilder} %Printer referanser
+
+\end{document}
