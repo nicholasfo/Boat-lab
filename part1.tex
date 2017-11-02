@@ -5,11 +5,60 @@
 To calculate the transfer function from $\delta$ to $\psi$, some assumptions have been taken. There are no disturbances, which means that $b = 0$. There are also no initial average heading, so $\psi(0) = 0$. \newline
 By substituting (\ref{eq: dotpsi}) into (\ref{eq: dotr}) the following can be derived:
 
+
 \begin{align}
-    \ddot{\psi} = \frac{-1}{T}\dot{\psi}+\frac{K}{T}\delta \nonumber \\
-    \mathcal{L}\{\ddot{\psi}\} \Rightarrow s^2\psi(s)+s\psi(0)+\psi(0) = \frac{-s}{T}\psi(0)+\psi(0)+\frac{K}{T}\delta \nonumber \\
-    \psi(s)(s^2+\frac{s}{T}) = \frac{K}{T}\delta \nonumber \\
-    H(s) = \frac{\psi(s)}{\delta} = \frac{K}{s(Ts+1)}
+    \ddot{\psi} = \frac{-1}{T}\dot{\psi}+\frac{K}{T}\delta  \nonumber    \\
+    \mathcal{L}\{\ddot{\psi}\} \Rightarrow s^2\psi(s)+s\psi(0)+\psi(0) = \frac{-s}{T}\psi(0)+\psi(0)+\frac{K}{T}\delta   \nonumber   \\
+    \psi(s)(s^2+\frac{s}{T}) = \frac{K}{T}\delta    \nonumber   \\
+    H(s) = \frac{\psi}{\delta}(s) = \frac{K}{s(Ts+1)}
 \end{align}
 
+
 \subsection{Task B}
+In order to determine K and T, the amplitude from the corresponding compass angle had to be found by calculation from the plots.
+$A_1$ corresponds to the amplitude of the transfer function with frequency $\omega_1 = 0.005$ from Figure(\ref{fig: 1b_w0005}) and $A_2$ to frequency $\omega_2 = 0.05$ from Figure(\ref{fig: 1b_w005}).
+\\
+Calculated amplitudes:
+\begin{equation}
+    \begin{align}
+        A_1 = \frac{63.34 - 4.64}{2} = 29.35 \quad \quad
+        A_2 = \frac{4.23 - 2.57}{2} = 0.83 \nonumber
+    \end{align}
+\end{equation}
+
+\begin{equations}
+    \begin{align}
+        H(j\omega_1) = \frac{K}{j\omega_1(Tj\omega_1 + 1)} \qquad A_1 = |H(j\omega_1)| = \frac{K}{\omega_1\sqrt{T^2\omega_1^2 + 1}} \nonumber \\
+        K^2 = A_1^2\omega_1^2(T^2\omega_1^2 + 1) \label{eq: K_2_1}
+    \end{align}
+\end{equations}
+
+\begin{equations}
+    \begin{align}
+        H(j\omega_2) = \frac{K}{j\omega_2(Tj\omega_2 + 1)} \qquad A_2 = |H(j\omega_2)| = \frac{K}{\omega_2\sqrt{T^2\omega_2^2 + 1}} \nonumber \\
+        K^2 = A_2^2\omega_2^2(T^2\omega_2^2 + 1) \label{eq: K_2_2}
+    \end{align}
+\end{equations}
+\\
+By setting equation (\ref{eq: K_2_1}) equal to (\ref{eq: K_2_2}) and inserting $A_1$, $A_2$, $\omega_1$ and $\omega_2$ we get:
+\begin{equation}
+    \begin{align}
+        T = \sqrt{\frac{A_1^2\omega_1^2 - A_2^2\omega_2^2}{A_2^2\omega_2^4 - A_1^2\omega_1^4}} = 72.52 \quad and \quad K = 0.156
+    \end{align}
+\end{equation}
+\newpage
+The model is now given by:
+\begin{equation}
+    \begin{align}
+        H(s) = \frac{\psi}{\delta}(s) = \frac{0.156}{72.52s^2+s}
+    \end{align}
+\end{equation}
+\\
+
+\subsection{Task C}
+When trying to do the same as task B only with waves and measurement noise on, we noticed that for $\omega_1$, it is possible to get a good estimate of the paramteres K and T, which clearly can be seen i Figure(\ref{fig: 1c_w0005}). For the second frequency $\omega_2$ the case is very different, the signal is very noisy and hard to get something useful out of, this signal is found in Figure(\ref{fig: 1c_w005}).
+\\
+
+\subsection{Task D}
+By adding a $1^{\circ}$ step response to the rudder and comparing the model from the transfer function with the real ship-response, it is noticeable that the approximation is good the first 500 seconds. After this the difference between the two responses is increasing with time, which can be found in Figure(\ref{fig: 1d_compare}).
+
