@@ -1,1 +1,15 @@
-\section{Task 1 - Identification of the boat parameters}
+\section{Part 1 - Identification of the boat parameters}
+
+\subsection{Task A}
+
+To calculate the transfer function from $\delta$ to $\psi$, some assumptions have been taken. There are no disturbances, which means that $b = 0$. There are also no initial average heading, so $\psi(0) = 0$. \newline
+By substituting (\ref{eq: dotpsi}) into (\ref{eq: dotr}) the following can be derived:
+
+\begin{align}
+    \ddot{\psi} = \frac{-1}{T}\dot{\psi}+\frac{K}{T}\delta \nonumber \\
+    \mathcal{L}\{\ddot{\psi}\} \Rightarrow s^2\psi(s)+s\psi(0)+\psi(0) = \frac{-s}{T}\psi(0)+\psi(0)+\frac{K}{T}\delta \nonumber \\
+    \psi(s)(s^2+\frac{s}{T}) = \frac{K}{T}\delta \nonumber \\
+    H(s) = \frac{\psi(s)}{\delta} = \frac{K}{s(Ts+1)}
+\end{align}
+
+\subsection{Task B}
