@@ -1,6 +1,6 @@
 
 %Part 2a
-load('C:\Users\nicholao\Downloads\Boatfiles\wave.mat')
+load('wave.mat')
 x = psi_w(2,:)*pi/180;
 window = 4096;
 noverlap = [];
