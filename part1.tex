@@ -8,7 +8,7 @@ By substituting (\ref{eq: dotpsi}) into (\ref{eq: dotr}) the following can be de
 
 \begin{align}
     \ddot{\psi} = \frac{-1}{T}\dot{\psi}+\frac{K}{T}\delta  \nonumber    \\
-    \mathcal{L}\{\ddot{\psi}\} \Rightarrow s^2\psi(s)+s\psi(0)+\psi(0) = \frac{-s}{T}\psi(0)+\psi(0)+\frac{K}{T}\delta   \nonumber   \\
+    \mathcal{L}\{\ddot{\psi}\} \Rightarrow s^2\psi(s)+s\psi(0)+\psi(0) = \frac{-s}{T}\psi(s)+\psi(0)+\frac{K}{T}\delta   \nonumber   \\
     \psi(s)(s^2+\frac{s}{T}) = \frac{K}{T}\delta    \nonumber   \\
     H(s) = \frac{\psi}{\delta}(s) = \frac{K}{s(Ts+1)}
 \end{align}
@@ -61,4 +61,30 @@ When trying to do the same as task B only with waves and measurement noise on, w
 
 \subsection{Task D}
 By adding a $1^{\circ}$ step response to the rudder and comparing the model from the transfer function with the real ship-response, it is noticeable that the approximation is good the first 500 seconds. After this the difference between the two responses is increasing with time, which can be found in Figure(\ref{fig: 1d_compare}).
+\newpage
 
+\section{Part 2 - Identification of wave spectrum model}
+\subsection{Task A}
+
+\begin{equations}
+    \begin{align}
+        
+    \end{align}
+\end{equations}
+\subsection{Task B}
+By Laplacetransforming (\ref{eq: dotxi}) and (\ref{eq: dotpsi_w}) we can obtain:
+\begin{equations}
+    \begin{align}
+        \xi_\omega &= \frac{\psi_\omega}{s} \label{eq: xi_omega}\\
+        s\psi_\omega &= -\omega^2(\xi_\omega) -2\lambda\omega_0\psi_\omega + K_\omega\omega_\omega \label{eq: psi_omega}
+    \end{align}
+\end{equations}
+\newline
+If we combine equation (\ref{eq: xi_omega}) with (\ref{eq: psi_omega}) and rearrange the equation, we get:
+\begin{equation}
+    \begin{align}
+        \frac{\psi_\omega}{\omega_\omega} = \frac{sK_\omega}{s^2 + 2\lambda\omega_0s + \omega_0^2}
+    \end{align}
+\end{equation}
+\subsection{Task C}
+\subsection{Task D}
