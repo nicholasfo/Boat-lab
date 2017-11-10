@@ -2,4 +2,33 @@
 
 \subsection{Part A}
 
+Based on equation (\ref{eq: deltaToPsi}) we may rewrite it and obtain a transfer function as our PD controller:
+
+\begin{equation}
+    \begin{align}
+        H_{pd} = K_{pd}\frac{1+T_ds}{1+T_fs}
+    \end{align}
+\end{equation}
+
+We define the open loop system as: 
+
+\begin{equation}
+    \begin{align}
+        H(s) = H_{pd}(s) \cdot H_{ship}(s) = \frac{KK_{pd}T_ds+KK_{pd}}{s^3TT_f+s^2(T_f+T)+s+0}
+    \end{align}
+\end{equation}
+
+ and let the phase margin = $50^{\circ}$, in addtition to $\omega_c = 0.10$ (rad/s). 
+We set the derivative time constant $T_d = T$ in order to cancel out the transfer function time constant. \newline
+To achieve these parameters $K_{pd}$ and $T_f$ must be adjusted while analyzing our system in a Bode Plot as shown in Figure (\ref{fig: 3a_bode_plot}). We ended up with $K_{pd} = 0.84$ and $T_f = 8.36$ giving the desired system. 
+
 \subsection{Part B}
+The PD controller is implemented in Simulink and can be seen in Figure (\ref{fig: 3bcd_simulink}). A saturation block was added due to a $\pm 45^{\circ}$ physical restriction of the rudder, in addition to $\psi_r = 30^{\circ}$ given as the system input. The simulation plot, where measurement noises are enabled, can be seen in Figure (\ref{fig: 3b_plot}). We observe that the cargo ship reach its reference after about 300 seconds of simulation and we can conclude that our autopilot works. The effect of the rudder restriction is also seen in the bottom plot.
+
+\subsection{Part C}
+
+Now we use the same Simulink diagram (\ref{fig: 3bcd_simulink}), but in addition to measurement noises we also enable current disturbance. 
+The plot of this simulation is shown in Figure (\ref{fig: 3c_plot}). Our autopilot does not reach its desired reference, hence the final stationary value is $\psi_r \approx 26.4$. In order to reach $\psi_r = 30$ a PID controller could be implemented, hence the integral effect would make the cargo ship reach its desired direction. As our controller is behaving at this point it is not ready for sailing at the ocean. 
+
+\subsection{Part D}
+The same Simulink diagram (\ref{fig: 3bcd_simulink}) is being used, measurement noises are still enabled, but the current disturbance is turned off and replaced with wave disturbance. The plot of this simulation is shown in Figure (\ref{fig: 3d_plot}). Our cargo ship is now oscillating around $\psi_r = 30$. Over a long period of time the ship might however have some mechanical issues with the rudder adjusting the heading with up to $20^{\circ}$ adjustment at a time. Hence the PD controller is not enough to make a satisfactory system. 

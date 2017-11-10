@@ -1,1 +1,52 @@
 \section{Part 2 - Identification of wave spectrum model}
+\subsection{Task A}
+
+To find the estimate of the Power Spectral Density (PSD) of $S_{\psi_w}(w)$ we use the MATLAB function \texttt{[pxx, f] = pwelch(x,window,noverlap,nfft,fs)}, with a sampling frequency of 10 Hz and where our input data is split into 4096 parts with a 50\% overlap. 
+The full MATLAB code can be seen in Listing (\ref{lst:2a_PSD}), Appendix B. The plot of the PSD can be seen in Figure (\ref{fig: 2a_PSD}) showing waves with given frequencies impact our cargo ship with different magnitudes. 
+
+
+\subsection{Task B}
+Now we want to find an analytical expression for the transfer function of the wave response model. By Laplace transforming (\ref{eq: dotxi}) and (\ref{eq: dotpsi_w}) we can obtain:
+\begin{equations}
+    \begin{align}
+        \xi_\omega &= \frac{\psi_\omega}{s} \label{eq: xi_omega}\\
+        s\psi_\omega &= -\omega^2(\xi_\omega) -2\lambda\omega_0\psi_\omega + K_\omega\omega_\omega \label{eq: psi_omega}
+    \end{align}
+\end{equations}
+\newline
+If we combine equation (\ref{eq: xi_omega}) with (\ref{eq: psi_omega}) and rearrange the equation, we get:
+\begin{equation}
+    \begin{align}
+        \frac{\psi_\omega}{\omega_\omega} = \frac{sK_\omega}{s^2 + 2\lambda\omega_0s + \omega_0^2}
+        \label{eq: Hpsi_omega}
+    \end{align}
+\end{equation}
+\newline
+The power spectral density function of the wave disturbance is given by the transfer function from the wave disturbance to 
+$\omega_\omega$
+and power spectral density function of $\omega_\omega$
+:
+\begin{equation}
+    \begin{align}
+        P_\psi__\omega &= H(s)\cdot P_\omega__\omega
+        \label{eq: Ppsi_omega}
+    \end{align}
+\end{equation}
+\newline
+Because $\omega_\omega$
+is white noise the power spectral density function is a constant, and given that it has univariance this constant is 1. 
+By combining this information with equation (\ref{eq: Ppsi_omega}) and (\ref{eq: Hpsi_omega}) we get:
+
+\begin{equation}
+    \begin{align}
+        P_\psi__\omega &= \frac{sK_\omega}{s^2 + 2\lambda\omega_0s + \omega_0^2}
+    \end{align}
+\end{equation}
+
+\subsection{Task C}
+Further on we wanted to find the resonance frequency $\omega_0$ from the estimated $S_{\psi_w}(w)$ from part A. The resonance frequency tells us which wave frequency having the biggest impact on our cargo ship. This was easily done in MATLAB as seen in Listing (\ref{lst:2c_omegazero}). From this we got $\omega_0 = 0.7823$. 
+
+
+\subsection{Task D}
+
+To have a complete model for the wave response we need to identify the damping factor $\lambda$. We define $K_w = 2\lambda\omega_0\sigma$ where $\sigma^2$ is the peak value of $P_{\psi_w}(w)$. By fitting $P_{\psi_w}(w)$ to the estimate of the PSD, $S_{\psi_w}(w)$, we can find $\lambda$ by trial and error. The most efficient method for this was to plot the estimate up to the analytical and adjust $\lambda$ until we where satisfied. This resulted in $\lambda = 0.082$ and the curve fitting can be seen in Figure (\ref{fig: 2d_lambda_0082}). 
