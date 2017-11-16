@@ -50,6 +50,38 @@ h=h_pd*h_s;
 [Gm, Pm] = margin(h);
 margin(h);
 
+%Part 5a
+A = [0 1 0 0 0; -(w_0)^2 -2*lambda*w_0 0 0 0; 0 0 0 1 0; 0 0 0 -1/T -K/T; 0 0 0 0 0];
+B = [0; 0; 0; K/T; 0];
+C = [0 1 1 0 0];
+E = [0 0; Kw 0; 0 0; 0 0; 0 1];
+
+%Sample frequency of 10 HZ
+timeSample = 1/10;
+
+%From continious to discrete:
+[Ad, Bd] = c2d(A,B,timeSample);
+[Ad, Ed] = c2d(A,E,timeSample);
+Cd = C;
+
+%Part 5b
+%Measures in radians from compass
+R = var(measNoise);
+Rd = R/timeSample;
+
+
+%Part 5c - Kalman Filter
+P_0 = diag([1 0.013 pi^2 1 2.5*10^(-3)]);
+Q = diag([30 10^(-6)]);
+x_0 = [0; 0; 0; 0; 0];
+
+dataStruct = struct('Ad', Ad, 'Bd', Bd, 'Cd', Cd, 'Ed', Ed, 'Q', Q, 'R', R, 'P_0', P_0, 'x_0', x_0);
+
+
+
+
+
+
 
 
 
