@@ -51,7 +51,7 @@ h=h_pd*h_s;
 margin(h);
 
 %Part 5a
-A = [0 1 0 0 0; -(w_0)^2 -2*lambda*w_0 0 0 0; 0 0 0 1 0; 0 0 0 -1/T -K/T; 0 0 0 0 0];
+A = [0 1 0 0 0; -w_0^2 -2*lambda*w_0 0 0 0; 0 0 0 1 0; 0 0 0 -1/T -K/T; 0 0 0 0 0];
 B = [0; 0; 0; K/T; 0];
 C = [0 1 1 0 0];
 E = [0 0; Kw 0; 0 0; 0 0; 0 1];
@@ -67,6 +67,7 @@ Cd = C;
 %Part 5b
 %Measures in radians from compass
 sim('task5b.slx');
+v = measNoise.data;
 R = var(measNoise);
 Rd = R/timeSample;
 
