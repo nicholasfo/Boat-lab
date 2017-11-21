@@ -1,0 +1,15 @@
+\section{Appendix E - Part 5}
+
+\begin{lstlisting}[frame=single, label={lst:5b_var}, caption={MATLAB code to find the estimate of the variance of the measurement noise},captionpos=b]
+
+%Simulate Simulink to obtain values
+sim('task5b.slx');
+
+%Extract data only
+v = measNoise.data;
+
+%Find variance
+R = var(v);
+
+\end{lstlisting}
+

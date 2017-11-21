@@ -1,1 +1,61 @@
 \section{Part 5 - Discrete Kalman filter}
+
+\subsection{Task A}
+In order to implement a Kalman filter to our cargo ship model we will discretize the model found in part 4, problem 4a. A sample frequency of 10 Hz is used and we use the MATLAB function \texttt{c2d} to discretize the matrices \textbf{A} and \textbf{B}, while \textbf{C} and \textbf{D} remains the same when discretized. 
+Hence \textbf{A} and \textbf{B} is calculated to:
+
+\begin{equation}
+    \bm{A_d} = 
+    \begin{bmatrix}
+        0.9970 & 0.0993 & 0 & 0 & 0 \\
+        -0.0608 & 0.9842 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0.0999 & 0 \\
+        0 & 0 & 0 & 0.9986 & -0.0002 \\     \nonumber
+        0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \bm{B_d} = 
+    \begin{bmatrix}
+       0 \\ 0 \\ 0 \\ 0.0002 \\ 0
+    \end{bmatrix} \qquad \bm{E_d} = 
+    \begin{bmatrix}
+       0 & 0 \\ 0.0005 & 0 \\ 0 & 0 \\ 0 & 0 \\ 0 & 0.10 \nonumber
+    \end{bmatrix}
+\end{equation}\\ \\
+
+\subsection{Task B}
+We can find an estimate of the variance of the measurement noise by give our cargo ship zero as input and measure the noise coming out from our system. By this we get out a time series, and by using the MATLAB function \texttt{var} it calculates the estimated variance. This was found to be $var = 6.1040 \cdot 10^{-7}$
+The MATLAB code for this may be seen in Listing (\ref{lst:5b_var})
+
+\subsection{Task C}
+From the task we were given the following matrices where \textbf{w} is the process noise, \textbf{Q} the process noise covariance, \textbf{$P_0^-$} and \textbf{$x_0^-$} is the initial a priori estimate error covariance and state estimate. 
+
+\begin{equation}
+    \textbf{w} =
+    \begin{bmatrix}
+        \omega_\omega & \omega_b
+    \end{bmatrix}^T , 
+    E\{\textbf{w}\textbf{w}^T\} = \textbf{Q} =
+    \begin{bmatrix}
+        30 & 0 \\
+        0 & 10^-^6       \nonumber
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \textbf{P_0^-} =
+    \begin{bmatrix}
+        1 & 0 & 0 & 0 & 0 \\
+        
+    \end{bmatrix}
+\end{equation}
+
+
+\subsection{Task D}
+figure (\ref{fig: 3c_plot})
+
+
+\subsection{Task E}
+
