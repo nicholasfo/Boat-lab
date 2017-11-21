@@ -1,3 +1,6 @@
+clear all;
+close all;
+
 %Part 2a
 load('wave.mat')
 x = psi_w(2,:)*pi/180;

@@ -1,3 +1,6 @@
+clear all;
+close all;
+
 %Part 3c
 T = 72.52;
 Td = T;

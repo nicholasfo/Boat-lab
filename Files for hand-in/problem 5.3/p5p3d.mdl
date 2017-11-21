@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.39"
+    ComputedModelVersion    "1.40"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -68,8 +68,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1846.0, 795.0]
-	ZoomFactor		[1.0000000000000002]
-	Offset			[-60.40104166666697, 41.119047619047365]
+	ZoomFactor		[1.75]
+	Offset			[184.74181547618997, 208.26190476190439]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -103,9 +103,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nicho"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 21 13:27:19 2017"
-  RTWModifiedTimeStamp	  433171633
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Tue Nov 21 20:28:31 2017"
+  RTWModifiedTimeStamp	  433196902
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1152,7 +1152,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "175"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "57"
     Block {
@@ -1177,23 +1177,23 @@ Model {
       ",'Marker','none','Visible','on'),[],struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visi"
       "ble','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color'"
       ",[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLi"
-      "nes',2,'LineNames',{{'Real ship/1','Referance'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-51.983"
-      "79','MaxYLimReal','55.77598','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',"
-      "true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.44705882352"
-      "9412 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.69411764705882"
-      "4 0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0."
-      "188235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184"
-      "313725490196],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 0 0],'LineStyle','-','LineWidth"
-      "',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Rudder'}},'Sh"
-      "owContent',true,'Placement',2)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','on','XGrid'"
-      ",true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.4470588235"
-      "29412 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.6941176470588"
-      "24 0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0"
-      ".188235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.18"
-      "4313725490196],'Title','%<SignalLabel>'),'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Nav"
-      "igation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Ver"
-      "sion','2016b')),'Version','2016b','Location',[1.66666666666667 79.0000000000001 640.333333333333 678.33333333333"
-      "3])"
+      "nes',2,'LineNames',{{'Real ship','Referance'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-51.98379"
+      "','MaxYLimReal','55.77598','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',tr"
+      "ue,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.4470588235294"
+      "12 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 "
+      "0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.18"
+      "8235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.18431"
+      "3725490196],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 0 0],'LineStyle','-','LineWidth',"
+      "0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Rudder'}},'Show"
+      "Content',true,'Placement',2)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','on','XGrid',t"
+      "rue,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529"
+      "412 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824"
+      " 0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.1"
+      "88235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.1843"
+      "13725490196],'Title','%<SignalLabel>'),'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navig"
+      "ation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Versi"
+      "on','2017a')),'Version','2017a','Location',[1.66666666666667 79.0000000000001 640.333333333333 678.333333333333]"
+      ")"
       NumInputPorts	      "2"
     }
     Block {
@@ -1428,15 +1428,15 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [500, 45, 530, 75]
 	  ZOrder		  -10
-	  LibraryVersion	  "1.388"
+	  LibraryVersion	  "1.391"
 	  SourceBlock		  "simulink/Sources/Band-Limited\nWhite Noise"
 	  SourceType		  "Band-Limited White Noise."
 	  SourceProductName	  "Simulink"
 	  SourceProductBaseCode	  "SL"
 	  ContentPreviewEnabled	  off
-	  Cov			  [0.001]
+	  Cov			  "[0.001]"
 	  Ts			  ".5"
-	  seed			  [23341]
+	  seed			  "[23341]"
 	  VectorParams1D	  on
 	}
 	Block {
@@ -1824,11 +1824,15 @@ Model {
       Name		      "Rudder +- 35 deg\n1"
       SID		      "57"
       Ports		      [1, 1]
-      Position		      [610, 220, 640, 250]
+      Position		      [620, 220, 650, 250]
       ZOrder		      24
       InputPortMap	      "u0"
       UpperLimit	      "35"
       LowerLimit	      "-35"
+      Port {
+	PortNumber		1
+	Name			"Real ship"
+      }
     }
     Block {
       BlockType		      Saturate
@@ -1970,12 +1974,14 @@ Model {
       }
     }
     Line {
+      Name		      "Real ship"
       ZOrder		      90
       SrcBlock		      "Rudder +- 35 deg\n1"
       SrcPort		      1
-      Points		      [8, 0; 0, 108; -100, 0]
+      Points		      [30, 0; 0, 108; -132, 0]
       Branch {
 	ZOrder			31
+	Labels			[2, 1]
 	Points			[0, 57]
 	DstBlock		"Mux"
 	DstPort			1

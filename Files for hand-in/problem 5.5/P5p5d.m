@@ -1,3 +1,6 @@
+clear all;
+close all;
+
 T = 72.52;
 lambda = 0.0820;
 w_0 = 0.7823;

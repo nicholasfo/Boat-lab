@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.34"
+    ComputedModelVersion    "1.35"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -69,7 +69,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
 	ZoomFactor		[0.8]
-	Offset			[-95.167697658141833, -36.880952380952522]
+	Offset			[-95.167697658141947, -36.880952380952579]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -103,9 +103,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nicho"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 21 13:28:15 2017"
-  RTWModifiedTimeStamp	  433171683
-  ModelVersionFormat	  "1.%<AutoIncrement:34>"
+  LastModifiedDate	  "Tue Nov 21 20:28:43 2017"
+  RTWModifiedTimeStamp	  433196922
+  ModelVersionFormat	  "1.%<AutoIncrement:35>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1852,6 +1852,10 @@ Model {
       InputPortMap	      "u0"
       UpperLimit	      "35"
       LowerLimit	      "-35"
+      Port {
+	PortNumber		1
+	Name			"Real ship"
+      }
     }
     Block {
       BlockType		      Saturate
@@ -1994,12 +1998,14 @@ Model {
       }
     }
     Line {
+      Name		      "Real ship"
       ZOrder		      60
       SrcBlock		      "Rudder +- 35 deg\n1"
       SrcPort		      1
       Points		      [29, 0; 0, 108; -141, 0]
       Branch {
 	ZOrder			31
+	Labels			[2, 1]
 	Points			[0, 57]
 	DstBlock		"Mux"
 	DstPort			1
